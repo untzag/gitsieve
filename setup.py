@@ -19,7 +19,7 @@ with open(os.path.join(here, 'VERSION')) as version_file:
     version = version_file.read().strip()
 
 setup(
-    name='gitignorepyapi',
+    name='gitsieve',
     packages=find_packages(),
     package_data={'': extra_files},
     install_requires=required,
@@ -28,14 +28,12 @@ setup(
     author='Blaise Thompson',
     author_email='blaise@untzag.com',
     license='MIT',
-    url='http://wright.tools',
-    keywords='spectroscopy science multidimensional visualization',
+    url='https://github.com/untzag/gitsieve',
+    keywords='',
     # https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=['Development Status :: 1 - Planning',
                  'License :: OSI Approved :: MIT License',
                  'Natural Language :: English',
-                 'Programming Language :: Python :: 2',
-                 'Programming Language :: Python :: 2.7',
                  'Programming Language :: Python :: 3',
                  'Programming Language :: Python :: 3.3',
                  'Programming Language :: Python :: 3.4',
