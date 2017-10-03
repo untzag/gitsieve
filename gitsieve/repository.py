@@ -20,12 +20,12 @@ __all__ = ['Repository']
 
 
 class Repository(object):
-    
+
     def __init__(self, path, ignore_file_pattern='*.gitignore'):
         self.path = os.path.abspath(path)
         self.ignore_file_pattern = ignore_file_pattern
         self.ignore_files = {}
-                
+
     def _find_ignore_files(self, directory):
         directory = os.path.abspath(os.path.normpath(directory))
         while True:
@@ -38,7 +38,7 @@ class Repository(object):
                 break
             else:
                 directory = os.path.dirname(directory)
-    
+
     def is_ignored(self, path):
         path = os.path.abspath(path)
         ignored = False
@@ -73,5 +73,4 @@ class Repository(object):
                             # must read the rest of the patterns looking for exclusion
                             # for now, store that a ignore match has occured
                             ignored = True
-        # false
         return ignored

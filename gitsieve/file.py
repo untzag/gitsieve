@@ -20,7 +20,6 @@ __all__ = ['File']
 
 
 def read(f):
-    # adapted from https://github.com/jelmer/dulwich/blob/master/dulwich/ignore.py
     for l in f:
         l = l.rstrip('\r\n')
         # ignore blank lines
@@ -40,7 +39,6 @@ def read(f):
 
 
 class Pattern(object):
-    # adapted from https://github.com/jelmer/dulwich/blob/master/dulwich/ignore.py
 
     def __init__(self, pattern):
         self.pattern = pattern
@@ -54,7 +52,7 @@ class Pattern(object):
         self._re = re.compile(translate(pattern))
 
     def __repr__(self):
-        return 'gitignoreapi.file.Pattern object \'{0}\' at {1}'.format(self.pattern, id(self))
+        return 'gitsieve.file.Pattern object \'{0}\' at {1}'.format(self.pattern, id(self))
 
     def match(self, path):
         return bool(self._re.search(path))
